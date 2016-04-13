@@ -1,0 +1,138 @@
+p {
+	font-family:arial;
+	font-size:12px;
+	line-height:18px;
+	letter-spacing: 0.1em;
+	}
+
+h1 {
+	font-family:arial;
+	size:18px;
+	padding:0px;
+	margin:0px;
+	}
+
+h2 {
+	font-family:arial;
+	size:16px;
+	padding:0px;
+	margin:0px;
+	}
+
+h3 {
+	font-family:arial;
+	size:14px;
+	padding:0px;
+	margin:0px;
+	}
+
+h4 {
+	font-family:arial;
+	size:12px;
+	padding:0px;
+	margin:0px;
+	}
+
+h5 {
+	font-family:arial;
+	size:10px;
+	padding:0px;
+	margin:0px;
+	}
+
+h6 {
+	font-family:arial;
+	size:9px;
+	padding:0px;
+	margin:0px;
+	}
+
+a {
+	font-family:arial;
+	color:black;
+	}
+
+.clearer {
+	clear:both;
+	}
+
+td {
+	font-family:arial;
+	font-size:12px;
+	line-height:18px;
+	letter-spacing: 0.1em;
+	}
+
+div {
+	font-family:arial;
+	size:8px;
+	padding:0px;
+	margin:0px;
+	}
+
+select {
+	font-family:arial;
+	font-size:12px;
+	border:solid 1px #d7d7d7;
+	}
+
+input {
+	font-family:arial;
+	font-size:12px;
+	padding:2px;
+	margin:0px;
+	border:solid 1px #d7d7d7;
+	}
+
+button {
+	background:white;
+	border-radius: 4px;
+	 border: 1px solid #d6d6d6;
+	 -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 1px 1px 0px #bababa;
+    font-family:arial;
+	font-size:12px;
+	line-height:18px;
+	letter-spacing: 0.1em;
+	}
+
+.input_era, .input_apaikka, .input_ryhma, .input_maksanut {
+	width:25px;
+	text-align:center;
+	}
+
+.input_paiva,.input_seura {
+	width:70px;
+	}
+
+.input_rata option {
+	width:170px;
+	font-family:arial;
+	font-size:12px;
+	padding:0px;
+	margin:0px;
+	border:solid 1px #d7d7d7;
+	}
+
+.input_etunimi, .input_sukunimi {
+	width:90px;
+	}
+
+.align_right {
+	text-align:right;
+	align:right;
+	}
+
+.align_left {
+	text-align:left;
+	align:left;
+	}
+	
+.float_right {
+	float:right;
+	}
+
+.float_left {
+	float:left;
+	}
