@@ -136,3 +136,42 @@ button {
 .float_left {
 	float:left;
 	}
+
+.inline_block {
+	display: inline-block;
+	}
+
+.Display_none {
+	display:none;
+	}
+	
+.ResultTableContainer {
+  height: 100%;
+	}
+
+/* Fake (pseudo) element, that enables vertical-align */
+.ResultTableContainer:before {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+	}
+
+.next_prev_result {
+  vertical-align: top;
+  }
+
+.next_prev_result button {
+	height:100%;
+	margin-top:48px;
+	}
+	
+#ResultTable td, #ResultTable input {
+	text-align:center;
+	align:center;
+	}
+
+#ResultTable tr:nth-child(1) td, #ResultTable tr:nth-child(2) td {
+	color:grey;
+	}
+

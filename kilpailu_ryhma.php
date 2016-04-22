@@ -2,7 +2,7 @@
 	$GroupNumber = $row["ryhma"];
 	$GroupTableId = "Table_Competitions".$GroupNumber;
 	echo "<table>";
-	echo "<tr><td colspan='11'><h3>Ryhm&auml; ".$GroupTableId."</h3></td></tr>";
+	echo "<tr><td colspan='11'><h3>Er&auml; ".$GroupNumber."</h3></td></tr>";
 	?>
 	
 </table>
@@ -14,8 +14,8 @@
 
 	<tr>
 		<td></td>
-		<td class="special_property">Ry</td>
-		<td>Er&auml;</td>
+		<td class="special_property">Er&auml;</td> <!-- HUOM!! eRA JA rYHMA KANNASSA TOISINPAIN -->
+		<td>Ry</td>
 		<td class="special_property">P&auml;iv&auml;</td>
 		<td class="special_property">Rata</td>
 		<td>AP</td>
@@ -43,7 +43,7 @@
 	$str_LajitSarjat = "LajitSarjat".$row["ryhma"];
 	$str_rowLajitSarjat = "LajitSarjatRow".$row["ryhma"];
 	
-	${$str_Md5} = mysqli_query($cv,"SELECT * FROM ammunta.kilpailut_kilpailijat WHERE kilpailu_id = '$CompId' AND ryhma = '$GroupNumber' ORDER BY apaikka");
+	${$str_Md5} = mysqli_query($cv,"SELECT * FROM ammunta.kilpailut_kilpailijat WHERE kilpailu_id = '$CompId' AND ryhma = '$GroupNumber' ORDER BY apaikka, sukunimi");
 	$q_rows = mysqli_num_rows(${$str_Md5});
 	$q_row = 0;
 		
@@ -51,19 +51,6 @@
 		if (${$str_Md5}->num_rows > 0) {
 			while(${$str_row} = ${$str_Md5}->fetch_assoc()) {
 				
-				
-				/*
-				if ($row["ryhma"] != $current_ryhma) {
-    			$GroupNumber = $GroupNumber + 1;
-    			if ($GroupNumber != 1){
-    				echo "</table>";
- 	 					echo "<button id='button_Add' class='kilpailija'>Lis&auml;&auml; kilpailija</button>";
-						echo "<button id='button_SaveTable' class='kilpailu' value='".$CompId."'>Tallenna</button>";
-    				}
-    			$GroupTableId = "Table_Competitions".$GroupNumber;
-    			
- 	 				}
-				*/
 				
 				echo "
 					<tr>
@@ -73,12 +60,7 @@
         		$sarja = ${$str_row}["sarja"];
         		$laji = ${$str_row}["laji"];
         		
-						switch ($laji){
-    					
-    					case "red": echo "Your favorite color is red!"; 
-      				break;
-    
-							}
+						
         		
         		echo "
         			
@@ -119,7 +101,7 @@
         		</td>
         		
         		<td>";
-        		echo ${$str_row}["lajit_sarjat_id"];
+        		//echo ${$str_row}["lajit_sarjat_id"];
         		
         		
         		
@@ -160,16 +142,7 @@
          		</td>
 					</tr>";
      			    
-     			    /* 			
-     			if ($row["ryhma"] != $current_ryhma) {
-    				$current_ryhma = $row["ryhma"];
- 	 					}
-     			if ($q_row == $q_rows){
-     				echo "</table>";
-     				echo "<button id='button_Add' class='kilpailija'>Lis&auml;&auml; kilpailija</button>";
-						echo "<button id='button_SaveTable' class='kilpailu' value='".$CompId."'>Tallenna</button>";
-     				}
-    			*/
+     			    
     		}
      			
      			
@@ -180,9 +153,11 @@
 				
 		
 						echo "</table>";
+     				
+     				
      				echo "<button id='button_Add' class='kilpailija' value='".$GroupTableId."'>Lis&auml;&auml; kilpailija</button>";
 						echo "<button id='button_SaveTable' class='kilpailu' value='".$CompId."'>Tallenna</button>";
-
+						echo "<div id='".$GroupTableId."_statusdiv'></div>";
 
 ?>
 

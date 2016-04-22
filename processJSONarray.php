@@ -11,7 +11,7 @@
 
 	include 'init_mysql.php';
 	
-	echo("keke".$count.$SaveType);
+	//echo("keke".$count.$SaveType);
 	
 	for ($i = 0; $i < $count; $i++) {
  		
@@ -22,7 +22,7 @@
 		$startdate = $tableData[$i]['2'];
 		$enddate = $tableData[$i]['3'];
 		$location = $tableData[$i]['4'];
-   	echo "*".$id."*";
+   	//echo "*".$id."*";
   	if ($id==''){
 			mysqli_query($cv,"INSERT INTO `ammunta`.`kilpailut` (`nimi`, `aloituspaiva`, `lopetuspaiva`, `paikka`) VALUES ('$name', '$startdate', '$enddate', '$location')");
 			//print "Tallennetaan uusi".$name;
@@ -51,21 +51,21 @@
 					$track = $tableData[$i]['13'];
 					$sport_class = $tableData[$i]['14'];
 					
-			   	echo "id: ".$id." ";
+			   	/*echo "id: ".$id." ";
 			   	echo "compid: ".$CompId." ";
 			   	echo "group: ".$group." ";
 			   	echo "heat: ".$heat." ";
 			   	echo "date: ".$date." ";
 			   	echo "position: ".$position." ";
-			   	echo "paid: ".$paid."<br><br>";/**/
+			   	echo "paid: ".$paid."<br><br>";*/
 			   	
 			  	if ($id==''){
 						mysqli_query($cv,"INSERT INTO `ammunta`.`kilpailut_kilpailijat` (`ryhma`, `era`, `kilpailu_id`, `paiva`, `rata`, `apaikka`, `etunimi`, `sukunimi`, `lajit_sarjat_id`, `sarja`, `laji`, `seura`, `maksanut`, `muuta`) VALUES ('$group', '$heat', '$CompId', '$date', '$track', '$position', '$firstname', '$lastname', '$sport_class', '$class', '$sport', '$club', '$paid', '$other')");
-						print "Tallennetaan uusi".$firstname;
+						//print "Tallennetaan uusi".$firstname;
 						}
 			  		else {
 			  			mysqli_query($cv,"UPDATE ammunta.kilpailut_kilpailijat SET ryhma='$group', era='$heat', paiva='$date', rata='$track', apaikka='$position', etunimi='$firstname', sukunimi='$lastname', lajit_sarjat_id='$sport_class', sarja='$class', laji='$sport', seura='$club', maksanut='$paid', muuta='$other' WHERE id='$id'");
-			  			print "Paivitetaan vanha".$firstname;
+			  			//print "Paivitetaan vanha".$firstname;
 			  			}		
   			
   				}

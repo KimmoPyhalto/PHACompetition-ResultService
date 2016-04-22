@@ -90,7 +90,13 @@ jq(document).ready(function(){
 				data: {"pTableData": TableData, "SaveType": ListType, "ListItem": ListItem},
 				success: function(msg){
 					jq("#div_Competitions").load(ListType+".php?var1="+ListItem+"");
-  				jq("#status").text(msg);
+  				//jq("#status").text(msg);
+  				jq("#status").text(msg).fadeIn();
+  				jq("#status").text(msg).delay(1000).fadeOut();
+  				
+  				//jq("#"+TableId+"_statusdiv").text(msg);
+  				//jq("#"+TableId+"_statusdiv").text(msg).delay(1000).fadeOut();
+  				
   				},
 					error: function(msg){
   					jq("#status").text('errori');

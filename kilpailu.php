@@ -1,24 +1,25 @@
 <?php 
 	include 'init_mysql.php';
 	$CompId = $_GET['var1']; 
-	echo "compid".$CompId;
+	//echo "compid: ".$CompId;
 	
 ?>
 
-	<h2>Kilpailu</h2>
+	
 	
 	<?php
 	
 		$q = mysqli_query($cv,"SELECT * FROM ammunta.kilpailut WHERE id = '$CompId'");
 		if ($q->num_rows > 0) {
 			while($row = $q->fetch_assoc()) {
-				echo $row["nimi"]." ".$row["id"]." ".$row["aloituspaiva"]."-".$row["lopetuspaiva"]." ".$row["paikka"];
+				echo "<h2>".$row["nimi"]."</h2><p>".$row["aloituspaiva"]."-".$row["lopetuspaiva"].", ".$row["paikka"]."</p>";
      		}
 				} else {
     			echo "0 results";
 				}
 			?>
 
+			<!--
 			<h3>Esitiedot ratapohjalle</h3>
 			<br>Valitse rata
 			<select id="selected_track">
@@ -31,8 +32,8 @@
 			</select> 
 			<input id="selected_heat" type="text" name="era" value="era">
 			<input id="selected_day" type="text" name="paiva" value="paiva">
-			
 			<button class='Button_MakeTrack'>Luo ratapohja</button>
+			-->
 			
 			<div id="div_NewCompetition"></div>
 
